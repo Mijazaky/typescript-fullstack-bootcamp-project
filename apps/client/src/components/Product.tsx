@@ -7,7 +7,7 @@ export const BookInfo = () => {
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
   const [selectedCollection, setSelectedCollection] = useState<number | undefined>(undefined);
 
-  // Fetch books with the selected sort order and collection filter
+  
   const { data, isLoading, error } = useQuery<ProductResponseDto[]>({
     queryKey: ['books', sortOrder, selectedCollection],
     queryFn: () =>
