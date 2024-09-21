@@ -10,12 +10,35 @@ export function bookRoute(app: Express): void {
 
     router.get('/', async (req, res) => {
       try {
-        const products = await prisma.product.findMany();
+        const sortOrder = req.query.sort === 'desc' ? 'desc' : 'asc';
+        const collectionId = typeof req.query.collectionId === 'string'
+          ? parseInt(req.query.collectionId, 10)
+          : undefined;
+        const searchText = typeof req.query.searchText === 'string' ? req.query.searchText : '';
+    
+        const products = await prisma.product.findMany({
+          where: {
+            ...(collectionId ? { collectionId } : {}),
+            ...(searchText ? {
+              name: {
+                contains: searchText,
+                mode: 'insensitive', // Case-insensitive search
+              },
+            } : {}),
+          },
+          orderBy: {
+            price: sortOrder,
+          },
+        });
+    
         res.json(products);
       } catch (error) {
         res.status(500).json({ error: 'Failed to fetch products' });
       }
     });
+    
+    
+
     router.post('/', async (req, res) => {
         const {name,author,image,price,variation,collection} = req.body;
         try {

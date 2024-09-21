@@ -10,12 +10,18 @@
     "start": "vite preview"
   },
   "dependencies": {
+    "@repo/dto": "workspace:^1.0.0",
+    "@tanstack/react-query": "^5.56.2",
+    "@tanstack/react-router": "^1.57.13",
+    "dto": "link:..\\..\\packages\\dto",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
+    "@tanstack/router-devtools": "^1.57.13",
+    "@tanstack/router-plugin": "^1.57.13",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.1",
@@ -24,10 +30,10 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.7",
-    "typescript": "^5.3.3",
     "postcss": "^8.4.39",
     "prettier": "^3.3.2",
     "tailwindcss": "^3.4.4",
+    "typescript": "^5.3.3",
     "vite": "^5.3.1"
   }
 }
