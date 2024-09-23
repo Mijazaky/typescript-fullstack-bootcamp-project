@@ -1,6 +1,7 @@
 {
   "name": "@repo/db",
   "version": "0.0.0",
+  "type": "module",
   "scripts":{
     "db:start": "docker compose up -d",
     "db:stop": "docker compose down",
@@ -18,7 +19,9 @@
     "prisma": "5.19.0" 
   },
   "exports":{
-    ".":"./src/index.ts"
+    
+    ".":"./src/index.ts",
+    "./seed": "./src/seed.ts"
 
   }
 }

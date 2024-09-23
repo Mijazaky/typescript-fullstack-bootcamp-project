@@ -1,0 +1,21 @@
+{"name": "e2e",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "e2e:run": "playwright test",
+    "e2e:report": "playwright show-report"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "client": "workspace:",
+    "server": "workspace:",
+    "@repo/db": "workspace:",
+    "@repo/eslint-config": "workspace:",
+    "@repo/typescript-config": "workspace:*",
+    "@playwright/test": "^1.47.1",
+    "@types/node": "^22.5.1"
+  }
+}

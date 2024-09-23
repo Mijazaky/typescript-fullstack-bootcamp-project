@@ -3,7 +3,7 @@ import { faker } from '@faker-js/faker';
 
 const prisma = new PrismaClient();
 
-async function main() {
+export async function seed() {
   // Create fake collections
   const collections = await Promise.all(
     Array.from({ length: 3 }).map(() =>
@@ -51,7 +51,7 @@ async function main() {
   );
 }
 
-main()
+seed()
   .catch((e) => {
     console.error(e);
   })
