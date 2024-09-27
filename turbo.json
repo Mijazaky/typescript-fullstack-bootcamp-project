@@ -33,6 +33,12 @@
       "dependsOn": ["build"],
       "cache": false,
       "persistent": true
-    }
+    },
+    "test":{},
+    "e2e:run" :{
+      "cache": false
+    },
+    "e2e:report": {}
+
   }
 }

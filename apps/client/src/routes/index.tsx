@@ -1,4 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router';
+// import { Link } from '@tanstack/react-router';
 import { BookInfo } from '../components/Product'; // Import your BookInfo component
 
 // Define the route for the root ('/') path
@@ -10,3 +11,4 @@ export const Route = createFileRoute('/')({
 function Index() {
   return <BookInfo />;
 }
+export default Index;
